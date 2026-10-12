@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angels Chips - Crocantes e Deliciosos | Beira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #f59e0b;
+            --primary-dark: #d97706;
+            --secondary: #78350f;
+            --accent: #ef4444;
+            --bg-light: #fffbe2;
+            --dark: #1f2937;
+            --light: #ffffff;
+            --gray: #f3f4f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('Imagens/feira-1.jpg') center/cover no-repeat;
+            background-color: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128c7e;
+        }
+
+        section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .price-badge {
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .order-form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        footer {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <i class="fa-solid fa-cookie-bite"></i> Angels Chips
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#produtos">Produto</a></li>
+                <li><a href="#pedido">Fazer Pedido</a></li>
+                <li><a href="#clientes">Clientes</a></li>
+                <li><a href="#feiras">Feiras</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Angels Chips</h1>
+        <p>Os chips de banana mais crocantes e saborosos da Cidade da Beira!</p>
+        <a href="#pedido" class="btn">Fazer Pedido Agora</a>
+    </section>
+
+    <section id="produtos">
+        <h2 class="section-title">Nosso Produto</h2>
+        <div class="products-grid">
+            <div class="card">
+                <img src="Imagens/produto-pacote .JPG" alt="Pacote de Chips de Banana Angels Chips" onerror="this.src='https://via.placeholder.com/400x300?text=Foto+do+Pacote+de+Chips'">
+                <div class="card-body">
+                    <span class="price-badge">20 MT / Pacote</span>
+                    <h3>Chips de Banana Crocantes</h3>
+                    <p>Feitos com bananas selecionadas, sequinhos, super crocantes e com o tempero no ponto certo. O snack perfeito para o seu dia a dia!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pedido">
+        <h2 class="section-title">Fazer Pedido (Delivery na Beira)</h2>
+        <div class="order-form">
+            <div class="form-group">
+                <label>Seu Nome:</label>
+                <input type="text" id="nomeCliente" placeholder="Digite seu nome">
+            </div>
+            <div class="form-group">
+                <label>Quantidade de Pacotes (20 MT cada):</label>
+                <input type="number" id="qtdPacotes" value="1" min="1" onchange="calcularTotal()">
+            </div>
+            <div class="form-group">
+                <label>Bairro na Beira:</label>
+                <select id="bairroBeira">
+                    <option value="Ponta Gea">Ponta Gea</option>
+                    <option value="Macurungo">Macurungo</option>
+                    <option value="Manga">Manga</option>
+                    <option value="Estoril">Estoril</option>
+                    <option value="Pioneiros">Pioneiros</option>
+                    <option value="Munhava">Munhava</option>
+                    <option value="Esturro">Esturro</option>
+                    <option value="Outro">Outro Bairro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Ponto de Referencia / Endereco:</label>
+                <input type="text" id="endereco" placeholder="Ex: Proximo a paragem...">
+            </div>
+            
+            <h3 style="margin-bottom: 15px;">Total: <span id="totalPreco" style="color: var(--primary-dark);">20</span> MT</h3>
+
+            <button class="btn btn-whatsapp" style="width: 100%;" onclick="enviarWhatsapp()">
+                <i class="fa-brands fa-whatsapp"></i> Enviar Pedido pelo WhatsApp
+            </button>
+        </div>
+    </section>
+
+    <section id="clientes">
+        <h2 class="section-title">Nossos Clientes</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="Imagens/cliente-1.jpg" alt="Cliente Angels Chips" onerror="this.src='https://via.placeholder.com/300x200?text=Foto+do+Cliente+1'">
+                <div class="gallery-caption">Cliente satisfeito!</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="Imagens/cliente-2.jpg" alt="Cliente Angels Chips" onerror="this.src='https://via.placeholder.com/300x200?text=Foto+do+Cliente+2'">
+                <div class="gallery-caption">Aprovacao garantida!</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="feiras">
+        <h2 class="section-title">Feiras de Negocios & Eventos</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="Imagens/feira-1.jpg" alt="Angels Chips na Feira" onerror="this.src='https://via.placeholder.com/300x200?text=Foto+da+Feira+1'">
+                <div class="gallery-caption">Nosso stand na Feira de Negocios da Beira</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="Imagens/feira-2.jpg" alt="Angels Chips Evento" onerror="this.src='https://via.placeholder.com/300x200?text=Foto+da+Feira+2'">
+                <div class="gallery-caption">Apresentando a Angels Chips aos visitantes</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Angels Chips. Todos os direitos reservados.</p>
+        <p>Cidade da Beira, Mocambique | Delivery Disponivel</p>
+    </footer>
+
+    <script>
+        function calcularTotal() {
+            const qtd = document.getElementById('qtdPacotes').value;
+            const total = qtd * 20;
+            document.getElementById('totalPreco').innerText = total;
+        }
+
+        function enviarWhatsapp() {
+            const nome = document.getElementById('nomeCliente').value;
+            const qtd = document.getElementById('qtdPacotes').value;
+            const bairro = document.getElementById('bairroBeira').value;
+            const endereco = document.getElementById('endereco').value;
+            const total = qtd * 20;
+
+            if(!nome || !endereco) {
+                alert('Por favor, preencha o seu nome e ponto de referencia.');
+                return;
+            }
+            
+            const numeroWhatsapp = "258874055437"; 
+
+            const mensagem = `Ola, Angels Chips! Gostaria de fazer um pedido:%0A%0A` +
+                             `*Nome:* ${nome}%0A` +
+                             `*Quantidade:* ${qtd} pacote(s)%0A` +
+                             `*Total:* ${total} MT%0A` +
+                             `*Bairro:* ${bairro}%0A` +
+                             `*Endereco/Referencia:* ${endereco}`;
+
+            window.open(`https://wa.me/${numeroWhatsapp}?text=${mensagem}`, '_blank');
+        }
+    </script>
+</body>
+</html>
